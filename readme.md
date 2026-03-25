@@ -9,7 +9,9 @@ This repository contains a demonstratory for performing and testing RAG with Ope
 ## Prerequisites
 
 - A valid OpenAI API key is required.
-[!IMPORTANT] Do not store the key in plain text. Provide it as an environmental variable called OPENAI_API_KEY.
+
+> [!IMPORTANT]  
+> Do not store the key in plain text. Provide it as an environmental variable called OPENAI_API_KEY.
 
 ## Features  
 
@@ -20,4 +22,5 @@ This repository contains a demonstratory for performing and testing RAG with Ope
 
 For questions or support, contact <alastair.plant@answerdigital.com>.
 
-Answer Digital Ltd., 2026.
+**Answer Digital Ltd.**  
+**2026**
