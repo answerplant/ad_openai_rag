@@ -5,7 +5,7 @@
 env/
 venv/
 ENV/
-openai_env/
+.venv/
 
 # --- Python Cache & Compiled Files ---
 __pycache__/
@@ -27,6 +27,7 @@ sdist/
 var/
 wheels/
 *.egg-info/
+uv.lock
 
 # --- IDEs & Editors ---
 .vscode/
