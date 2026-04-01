@@ -1,0 +1,39 @@
+# Created by venv; see https://docs.python.org/3/library/venv.html
+# --- Security & Environment Variables ---
+.env
+.venv
+env/
+venv/
+ENV/
+openai_env/
+
+# --- Python Cache & Compiled Files ---
+__pycache__/
+*.py[cod]
+*$py.class
+
+# --- Distribution & Packaging ---
+bin/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+
+# --- IDEs & Editors ---
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# --- OS Generated Files ---
+.DS_Store
+Thumbs.db

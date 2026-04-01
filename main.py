@@ -3,6 +3,7 @@
 # Echo the key with $Env:OPENAI_API_KEY
 # https://docs.langchain.com/oss/python/integrations/embeddings/openai
 
+from dotenv import load_dotenv
 import os
 import getpass
 from langchain_openai import OpenAIEmbeddings
@@ -12,23 +13,24 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables import RunnablePassthrough
 from langchain_core.vectorstores import InMemoryVectorStore
 
+load_dotenv()
+
 if not os.getenv("OPENAI_API_KEY"):
-    os.environ["OPENAI_API_KEY"] = getpass.getpass("Enter your OpenAI API key: ")
+    os.environ["OPENAI_API_KEY"] = getpass.getpass(
+        "Enter your OpenAI API key: "
+    )
 
 embeddings = OpenAIEmbeddings(
-        model="text-embedding-3-small",
+    model="text-embedding-3-small",
 )
 
-llm = ChatOpenAI(
-    model="gpt-5-nano",
-    temperature=0
-)
+llm = ChatOpenAI(model="gpt-5-nano", temperature=0)
 
 texts = [
     "Answer Digital is a technology consultancy in Leeds, West Yorkshire, UK.",
     "Answer Digital was founded in 1998.",
     "Answer Digital's favourite colour is yellow.",
-    "Answer Digital has 100 employees."
+    "Answer Digital has 100 employees.",
 ]
 
 vectorstore = InMemoryVectorStore.from_texts(
@@ -59,5 +61,7 @@ rag_chain = (
     | StrOutputParser()
 )
 
-response = rag_chain.invoke("Where is Answer Digital located and when was it founded?")
+response = rag_chain.invoke(
+    "Where is Answer Digital located and when was it founded?"
+)
 print(response)
